@@ -17,7 +17,7 @@ return {
                 local code = table.concat(buf_content, "\n")
 
                 local api_url = "https://api-inference.huggingface.co/models/google/gemma-7b"
-                local auth_token = "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"
+                local auth_token = "API-KEY"
 
                 local payload = {
                     inputs = "Complete code: " .. code
