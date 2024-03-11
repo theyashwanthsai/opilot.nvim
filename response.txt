@@ -1,1 +1,0 @@
-[{"generated_text":"Complete the following code snippet. give code only. Give code only after the input: #include<stdio.h>\n\n\nint sum(int a,\n\n\n\n\n{\n\n\nint \treturn 0;// do not count\n\n\nint\tstep(a);\nint\ts = a;\n\n\nint\ta = caculate"}]
