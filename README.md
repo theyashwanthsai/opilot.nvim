@@ -1,8 +1,8 @@
-# intelliNeovim
+# AI.nvim
 AI assistant for neovim
 
 Todo:
-- [ ] Autocomplete on demand
+- [x] Autocomplete on demand (Formatting and bugs)
 - [ ] Generate test cases on demand
 - [ ] Generate documentation on demand
 - [ ] Explain code

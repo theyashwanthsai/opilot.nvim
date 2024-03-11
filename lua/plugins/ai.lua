@@ -1,8 +1,8 @@
 return {
     {
-        "intelli",
+        "ai",
         dev = "true",
-        dir = "~/.config/nvim/lua/plugins/intelli.lua.lua",
+        dir = "~/.config/nvim/lua/plugins/ai.lua",
         cmd = "AI",
         cond = "true",
         config = function()
