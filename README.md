@@ -1,4 +1,7 @@
-# AI.nvim
+# opilot.nvim
+Open source Co-pilot clone for Neovim 
+
+
 AI assistant for neovim
 
 Todo:

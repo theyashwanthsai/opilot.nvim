@@ -1,8 +1,8 @@
 return {
     {
-        "ai",
+        "opilot",
         dev = "true",
-        dir = "~/.config/nvim/lua/plugins/ai.lua",
+        dir = "~/.config/nvim/lua/plugins/opilot.lua",
         cmd = "AI",
         cond = "true",
         config = function()
