@@ -1,3 +1,7 @@
 #include<stdio.h>
 
-int factorial(int n){
+int sum(int a, int b){
+  return a+b;
+}
+ 
+
