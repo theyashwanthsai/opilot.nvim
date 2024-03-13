@@ -1,3 +1,3 @@
 #include<stdio.h>
 
-int add 
+int factorial(int n){

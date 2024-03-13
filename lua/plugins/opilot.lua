@@ -86,6 +86,25 @@ return {
             end
             vim.cmd([[command! AI lua CodeComplete()]])        
         end
+    },
+    {
+       "opilot_Test",
+        dev = "true",
+        dir = "~/.config/nvim/lua/plugins/opilot.lua",
+        cmd = "AITest",
+        cond = "true",
+        config function()
+            function AddTests()
+                -- Copy code from current buffer, send to API and generate test cases and add it.
+                local buf_content = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+                local code = table.concat(buf_content)
+
+                local api_url = ""
+                local auth_token = ""
+
+            end
+        end
+
     }
 }
 
