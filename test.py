@@ -1,2 +1,2 @@
+# simple calculator code
 def sum(a, b):
-    return a+b

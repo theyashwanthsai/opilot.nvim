@@ -6,7 +6,8 @@ AI assistant for neovim
 
 ![demo](demo.gif) 
 
-
+#### Need
+Debug code. Debug response. Find a way to make the response look pretty when appending to our file.
 
 # LLM Model in use:
 codellama from hugging face is a good open source model but not as good as gpt3.5/4
