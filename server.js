@@ -33,21 +33,30 @@ app.post('/getcode', async (req, res) => {
   reqcode= code;
   res.send('Got it!');
 })
-let rescode;
-app.get('/apires', async (req, res) => {
 
+
+let rescode;
+
+// Todo - Figure out a way to send this response to my plugin, 
+// ans variable contains the code (proper format) i need to send this to lua plugin. 
+// And from there i need to append to the current buffer.
+app.get('/apires', async (req, res) => {
   try{
     const response = await query({"inputs": "def sum(a, b): "})	  
     console.log("Hit the endpoint")
     let ans = response[0].generated_text;
-    console.log(ans)
-    res.send(ans)
+    console.log(ans);
+    rescode = ans;
+    res.send(ans);
 	  // console.log(JSON.stringify(response));
 	  // res.send(response);
   } catch (error){
-    res.send(error.message);
+      res.send(error.message);
   } 
 })
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
