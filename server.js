@@ -4,13 +4,16 @@ const port = 3000
 const bodyparser = require('body-parser')
 require('dotenv').config()
 
-app.use(bodyparser.json);
+app.use(bodyparser.json());
 
 async function query(data) {
 	const response = await fetch(
 		"https://api-inference.huggingface.co/models/codellama/CodeLlama-13b-hf",
 		{
-			headers: { Authorization: `${process.env.API}` },
+			headers: { 
+			  Authorization: `Bearer ${process.env.API}`, 
+			  'Content-Type': 'application/json',
+      },
 			method: "POST",
 			body: JSON.stringify(data),
 		}
@@ -19,30 +22,30 @@ async function query(data) {
 	return result;
 }
 
-
-
-
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-let reqcode;
+// let reqcode;
 
 app.post('/getcode', async (req, res) => {
   const { code } = req.body;
   reqcode= code;
   res.send('Got it!');
 })
-
+let rescode;
 app.get('/apires', async (req, res) => {
-  // let rescode;
+
   try{
-    const respone = await query({"inputs": "def sum(a, b): "})	  
+    const response = await query({"inputs": "def sum(a, b): "})	  
     console.log("Hit the endpoint")
-	  console.log(JSON.stringify(response));
-	  res.send(response)
+    let ans = response[0].generated_text;
+    console.log(ans)
+    res.send(ans)
+	  // console.log(JSON.stringify(response));
+	  // res.send(response);
   } catch (error){
-    res.send('error')
+    res.send(error.message);
   } 
 })
 
