@@ -12,12 +12,27 @@ return {
                 -- send a post req to nodejs server
                 -- get output back from the nodejs server
                 -- write the output back to buffer
-                local url = "http://localhost:3000/apires"
-                local curl_cmd = "curl -X GET " .. url .. " 2>/dev/null"
-                local response = vim.fn.system(curl_cmd)
+                -- Backend server has two major API
+                -- Send to /getcode and then get from /apires
                 local bufnr = vim.api.nvim_get_current_buf()
+                local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+                local code = table.concat(lines, '\n')
+                -- local code = "abc" 
+                -- print(code)
+                local url = "http://localhost:3000/getcode"
+                -- local curl_cmd = "curl -X POST -H 'Content-type: text/plain' -d '" .. code .. "' ".. url
+                local json_code = '{"code":"' .. code:gsub("\n", "\\n") .. '"}'
+                local curl_cmd = "curl -X POST -H 'Content-type: application/json' -d '" .. json_code .. "' " .. url .. " 2>/dev/null"
+                -- print(curl_cmd)
+                local response = vim.fn.system(curl_cmd)
+                -- print(response)
+
+                local url1 = "http://localhost:3000/apires"
+                local curl_cmd1 = "curl -X GET " .. url1 .. " 2>/dev/null"
+                local response1 = vim.fn.system(curl_cmd1)
+                -- local bufnr = vim.api.nvim_get_current_buf()
                 local lines = {}
-                for line in response:gmatch("[^\r\n]+") do
+                for line in response1:gmatch("[^\r\n]+") do
                     table.insert(lines, line)
                 end
                 vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
