@@ -1,14 +1,16 @@
 # opilot.nvim
-Open source Co-pilot clone for Neovim 
+Open source Co-pilot clone for Neovim. I am using codellama 13b as the main model here. 
 
+AI coding assistant for neovim
 
-AI assistant for neovim
+![demo1](sumcpp.gif)
+![demo2](sumpy.gif)
 
-![demo](demo.gif) 
+## Architecture
+I am currently using a middleware microservice type system to send and recieve code from the hugginface api as I was having trouble directly making a request.
 
-#### Need
-Debug code. Debug response. Find a way to make the response look pretty when appending to our file.
-
+heres a rough sketch of what I tried implementing (It may seem an overhead, but it was working, so I didnt touch)
+![architecture](arch.png)
 # LLM Model in use:
 codellama from hugging face is a good open source model but not as good as gpt3.5/4
 
