@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h> 
 
-int gcd(int a, int b){
+int sum(int a, int b){
 

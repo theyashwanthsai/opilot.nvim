@@ -42,8 +42,9 @@ let rescode;
 // And from there i need to append to the current buffer.
 app.get('/apires', async (req, res) => {
   try{
-    const response = await query({"inputs": "def sum(a, b): "})	  
-    console.log("Hit the endpoint")
+    const response = await query({"inputs": `#include<stdio.h> 
+    int sum(int a, int b){`});	  
+    console.log("Hit the endpoint");
     let ans = response[0].generated_text;
     console.log(ans);
     rescode = ans;

@@ -1,2 +1,1 @@
-# simple calculator code
-def sum(a, b):
+def add(a, b):
