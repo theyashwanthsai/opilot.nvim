@@ -20,4 +20,5 @@ Todo:
 - [x] Autocomplete on demand (Formatting and bugs)
 - [x] Generate tests on demand (Basic function. Needs a lot of formatting)
 - [ ] Generate documentation on demand
-- [ ] Explain code
+- [ ] Explain coderch
+
