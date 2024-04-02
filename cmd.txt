@@ -1,1 +1,0 @@
-curl https://api-inference.huggingface.co/models/codellama/CodeLlama-7b-hf -X POST -d '{"inputs": "Complete the following code snippet. give code only. Give code only after the input: #include<stdio.h>\n\n\nint sum(int a,\n\n "}' -H "Content-Type: application/json" -H "Authorization: Bearer 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"
