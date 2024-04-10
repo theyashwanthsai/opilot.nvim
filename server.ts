@@ -57,8 +57,12 @@ app.get('/apires', async (req: Request, res: Response) => {
       console.log("/apires endpoint hit!");
       const response = await query({ "inputs": reqcode });
       let ans: string = response[0].generated_text;
-      console.log(ans);
+      // console.log(ans);
       rescode = ans;
+      if (rescode.startsWith(reqcode)) {
+        rescode = rescode.slice(reqcode.length).trim();
+      }
+      console.log(rescode)
       res.send(rescode);
     }
     else{

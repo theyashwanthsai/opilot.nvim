@@ -35,7 +35,8 @@ return {
                 for line in response1:gmatch("[^\r\n]+") do
                     table.insert(lines, line)
                 end
-                vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
+                -- vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
+                vim.fn.setreg('*', table.concat(lines, '\n'))
             end
             vim.cmd([[command! AI lua CodeComplete()]])
         end
